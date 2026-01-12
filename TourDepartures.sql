@@ -37,7 +37,6 @@ dsdsdsdsd
 -- 3. KIỂM TRA KẾT QUẢ (Nếu ra số > 0 là thành công)
 SELECT COUNT(*) AS SoLuongLichTrinh FROM TourDepartures;
 SELECT TOP 10 * FROM TourDepartures;
-cccccccccc ddddddddddddddd
 
 -- chạy test
 select * from TourPackages
@@ -51,11 +50,4 @@ UPDATE TourDepartures
 SET AvailableSeats = 20;
 
 
-Nguyễn Văn A
-Nguyễn Thị B
-Trần Văn C
-Lê Thị D
-Phạm Văn E
-
-
-            
+sjgdhfhjsdgfhjsdgfjhsdfh
