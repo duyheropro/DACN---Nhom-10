@@ -1,7 +1,7 @@
 ﻿create database BookingTour
 USE BookingTour;
 GO
-
+jgfjhsgjfh
 -- 1. Xóa sạch dữ liệu lịch cũ để làm lại
 DELETE FROM TourDepartures;
 DBCC CHECKIDENT ('TourDepartures', RESEED, 0);
