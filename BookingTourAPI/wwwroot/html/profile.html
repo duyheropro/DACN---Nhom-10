@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân - BookingTourAPI</title>
+    <link rel="stylesheet" href="../css/home.css"> <link rel="stylesheet" href="../css/profile.css"> </head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown">
+                </div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <h1>Thông tin cá nhân</h1>
+
+        <div id="loading-message" class="loading-message hidden">Đang tải thông tin...</div>
+        <div id="error-message" class="error-box hidden"></div>
+        <div id="success-message" class="success-box hidden"></div>
+
+        <form id="profile-form">
+            <div class="form-group">
+                <label for="profile-email">Email</label>
+                <input type="email" id="profile-email" readonly disabled>
+            </div>
+            <div class="form-group">
+                <label for="profile-username">Tên người dùng (Username)</label>
+                <input type="text" id="profile-username" placeholder="Nhập tên người dùng mong muốn">
+            </div>
+
+            <div class="form-group">
+                <label for="profile-fullname">Họ và tên</label>
+                <input type="text" id="profile-fullname" placeholder="Nhập họ tên đầy đủ">
+            </div>
+            <div class="form-group">
+                <label for="profile-dob">Ngày sinh</label>
+                <input type="date" id="profile-dob"> </div>
+            <button type="submit" class="save-button">Lưu thay đổi</button>
+        </form>
+
+        <div class="profile-actions">
+            <a href="#">Đổi mật khẩu</a>
+            </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 BookingTourAPI. Đã đăng ký Bản quyền.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script> 
+    
+    <script src="../js/profile.js"></script> 
+</body>
+</html>

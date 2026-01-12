@@ -1,0 +1,185 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\about.css",
+      "PackagePath": "staticwebassets\\css\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\flights.css",
+      "PackagePath": "staticwebassets\\css\\flights.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\history.css",
+      "PackagePath": "staticwebassets\\css\\history.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\hotels.css",
+      "PackagePath": "staticwebassets\\css\\hotels.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\payment.css",
+      "PackagePath": "staticwebassets\\css\\payment.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\search-layout.css",
+      "PackagePath": "staticwebassets\\css\\search-layout.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\tour-details.css",
+      "PackagePath": "staticwebassets\\css\\tour-details.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\css\\tours.css",
+      "PackagePath": "staticwebassets\\css\\tours.css"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\about.html",
+      "PackagePath": "staticwebassets\\html\\about.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\flights.html",
+      "PackagePath": "staticwebassets\\html\\flights.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\forgot-password.html",
+      "PackagePath": "staticwebassets\\html\\forgot-password.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\history.html",
+      "PackagePath": "staticwebassets\\html\\history.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\home.html",
+      "PackagePath": "staticwebassets\\html\\home.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\hotels.html",
+      "PackagePath": "staticwebassets\\html\\hotels.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\login.html",
+      "PackagePath": "staticwebassets\\html\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\payment.html",
+      "PackagePath": "staticwebassets\\html\\payment.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\profile.html",
+      "PackagePath": "staticwebassets\\html\\profile.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\register.html",
+      "PackagePath": "staticwebassets\\html\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\reset-password.html",
+      "PackagePath": "staticwebassets\\html\\reset-password.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\tour-details.html",
+      "PackagePath": "staticwebassets\\html\\tour-details.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\html\\tours.html",
+      "PackagePath": "staticwebassets\\html\\tours.html"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\images\\auth-background.jpg",
+      "PackagePath": "staticwebassets\\images\\auth-background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\dataMaps.js",
+      "PackagePath": "staticwebassets\\js\\dataMaps.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\flights.js",
+      "PackagePath": "staticwebassets\\js\\flights.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\history.js",
+      "PackagePath": "staticwebassets\\js\\history.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\hotels.js",
+      "PackagePath": "staticwebassets\\js\\hotels.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\payment.js",
+      "PackagePath": "staticwebassets\\js\\payment.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\profile.js",
+      "PackagePath": "staticwebassets\\js\\profile.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\review.js",
+      "PackagePath": "staticwebassets\\js\\review.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\tour-details.js",
+      "PackagePath": "staticwebassets\\js\\tour-details.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\tours.js",
+      "PackagePath": "staticwebassets\\js\\tours.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\user-login.js",
+      "PackagePath": "staticwebassets\\js\\user-login.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\user-register.js",
+      "PackagePath": "staticwebassets\\js\\user-register.js"
+    },
+    {
+      "Id": "C:\\Users\\HieuNguyen\\Downloads\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\BookingTourAPI\\wwwroot\\js\\utils.js",
+      "PackagePath": "staticwebassets\\js\\utils.js"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BookingTourAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BookingTourAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.BookingTourAPI.props",
+      "PackagePath": "build\\BookingTourAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.BookingTourAPI.props",
+      "PackagePath": "buildMultiTargeting\\BookingTourAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.BookingTourAPI.props",
+      "PackagePath": "buildTransitive\\BookingTourAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

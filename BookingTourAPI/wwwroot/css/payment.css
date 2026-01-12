@@ -1,0 +1,399 @@
+/* TRONG FILE: wwwroot/css/payment.css (THAY THẾ TOÀN BỘ) */
+
+body {
+    background-color: #f4f7f9;
+}
+
+.payment-page-main {
+    padding: 30px 20px;
+}
+
+.payment-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    /* Cột trái 60%, Cột phải 40% */
+    grid-template-columns: 3fr 2fr; 
+    gap: 30px;
+}
+
+/* --- CỘT BÊN TRÁI (CHI TIẾT) --- */
+.payment-details-column {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.payment-details-column h1 {
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.payment-form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.payment-form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.payment-form-section h3 {
+     font-size: 20px;
+     margin-top: 0;
+     margin-bottom: 20px;
+     color: #111;
+}
+
+.demo-note {
+    font-size: 14px;
+    color: #555;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+#payment-form .form-group {
+    margin-bottom: 20px;
+}
+
+#payment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b4f56;
+}
+
+/* --- Style cho Input có Icon --- */
+.icon-input {
+    position: relative;
+}
+
+.icon-input i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+}
+
+#payment-form input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Tăng padding trái cho icon */
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#payment-form input:focus {
+     border-color: #007bff;
+     outline: none;
+     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+
+/* --- Nút Thanh toán --- */
+.auth-button {
+    width: 100%;
+    padding: 14px 25px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    margin-top: 10px;
+    display: flex; /* Thêm để căn icon */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.auth-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Nút MoMo */
+.momo-btn {
+    background-color: #A60067; /* Màu MoMo */
+}
+.momo-btn:hover {
+    background-color: #8e0057;
+}
+.momo-btn img {
+    height: 24px;
+}
+
+/* Nút Thanh toán sau */
+.pay-later-btn {
+    background-color: #6c757d; /* Màu xám */
+    border: 1px solid #6c757d;
+}
+.pay-later-btn:hover {
+    background-color: #5a6268;
+}
+
+
+/* --- CỘT BÊN PHẢI (TÓM TẮT) --- */
+.order-summary-column {
+    /* Để chứa phần tử sticky */
+    position: relative;
+}
+
+.order-summary-box {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    
+    /* Làm cho nó dính lại */
+    position: sticky;
+    top: 90px; /* 70px (header) + 20px (khoảng cách) */
+}
+
+.order-summary-box h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #007bff;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#item-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+#item-details strong {
+    color: #555;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+#item-details span {
+    text-align: right;
+    font-weight: 500;
+}
+
+.order-summary-box hr {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.summary-total #summary-total-price {
+    font-size: 22px;
+    color: #d9534f; /* Màu đỏ giá */
+}
+
+/* --- THÔNG BÁO (Lỗi, Thành công) --- */
+.error-box, .success-box, .error-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+}
+.error-box, .error-message { 
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #ffbdad;
+}
+/* --- SỬA GIAO DIỆN THÔNG BÁO THÀNH CÔNG --- */
+
+.success-box {
+    color: #155724;
+    background-color: #d4edda; /* Màu nền xanh nhạt */
+    border: 1px solid #c3e6cb;
+    
+    /* Căn chỉnh khung */
+    max-width: 600px;       /* Giới hạn chiều rộng cho gọn */
+    margin: 60px auto;      /* Cách lề trên nhiều hơn để nằm giữa màn hình thoáng hơn */
+    padding: 40px 30px;     /* Tăng độ dày đệm bên trong */
+    border-radius: 12px;    /* Bo góc mềm mại */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Đổ bóng nhẹ tạo chiều sâu */
+    
+    /* Căn giữa nội dung con */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Chỉnh font chữ tiêu đề */
+.success-box h2 {
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Chỉnh các dòng text mô tả */
+.success-box p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #444;
+}
+
+.success-box strong {
+    color: #155724;
+}
+
+/* QUAN TRỌNG: Sửa nút "Quay về trang chủ" */
+.success-box .auth-button {
+    width: auto !important; /* Ghi đè độ rộng 100% cũ */
+    min-width: 220px;       /* Độ rộng vừa phải */
+    padding: 12px 30px;
+    margin-top: 25px;       /* Cách xa text phía trên */
+    border-radius: 30px;    /* Bo tròn nút hình viên thuốc */
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Màu xanh đẹp hơn */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Bóng nút */
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.success-box .auth-button:hover {
+    transform: translateY(-2px); /* Hiệu ứng nổi khi di chuột */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+/* --- Modal QR Code --- */
+.qr-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1002; /* Cao hơn header */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); /* Tối hơn */
+    padding-top: 60px;
+}
+
+.qr-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.qr-modal-content .close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.qr-modal-content .close-button:hover {
+    color: #333;
+}
+
+.qr-modal-content h4 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: #A60067; /* Màu MoMo */
+}
+
+.qr-modal-content p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#qr-code-container {
+    padding: 15px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    height: 250px; /* Cố định chiều cao */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#qr-code-container img {
+    width: 220px;
+    height: 220px;
+    display: block;
+}
+
+.qr-note {
+    font-size: 13px !important;
+    font-style: italic;
+    margin-top: 15px;
+    color: #777 !important;
+}
+
+/* Spinner (CSS thuần) */
+#qr-loading-spinner {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #A60067; /* MoMo */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none; /* Ẩn ban đầu */
+}
+#qr-loading-spinner.visible {
+    display: block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .payment-container {
+        /* Chuyển về 1 cột */
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary-column {
+        /* Đẩy cột tóm tắt lên đầu (trên mobile) */
+        grid-row: 1; 
+    }
+
+    .order-summary-box {
+        /* Bỏ dính */
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .payment-details-column {
+        padding: 20px;
+    }
+}

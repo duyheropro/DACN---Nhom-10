@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về chúng tôi - BookingTourAPI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/about.css"> </head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn active" style="color:#007bff;">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>Về BookingTourAPI</h1>
+                <p>Kết nối đam mê - Trải nghiệm hành trình</p>
+            </div>
+        </section>
+
+        <section class="about-section container">
+            <div class="about-text">
+                <h2>Câu chuyện của chúng tôi</h2>
+                <p>
+                    Được thành lập với niềm đam mê du lịch mãnh liệt, BookingTourAPI là đồ án tâm huyết của nhóm chúng tôi nhằm mang đến giải pháp đặt vé máy bay và tour du lịch trực tuyến tiện lợi, nhanh chóng và an toàn nhất.
+                </p>
+                <p>
+                    Chúng tôi tin rằng mỗi chuyến đi là một câu chuyện, và sứ mệnh của chúng tôi là giúp bạn viết nên câu chuyện đó một cách dễ dàng nhất. Với hệ thống tích hợp công nghệ hiện đại, việc lên kế hoạch cho chuyến đi chưa bao giờ đơn giản đến thế.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474111PXL/anh-dep-nhat-the-gioi-ve-thien-nhien_041753462.jpg" alt="Team working">
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Đội ngũ phát triển</h2>
+                <p class="section-desc">Những người tạo nên sản phẩm này</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="member-img">
+                            <img src="https://ui-avatars.com/api/?name=Nguyen+Hieu&background=0D8ABC&color=fff&size=150" alt="Member">
+                        </div>
+                        <h3>Nguyễn Trung Hiếu</h3>
+                        <p class="role">Backend Dev/Data Analyst</p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="member-img">
+                            <img src="https://ui-avatars.com/api/?name=Cao+Thien&background=28a745&color=fff&size=150" alt="Member">
+                        </div>
+                        <h3>Cao Thiện Đạt</h3>
+                        <p class="role">Trưởng nhóm/Frontend Dev</p>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="member-img">
+                            <img src="https://ui-avatars.com/api/?name=Nguyen+Duy&background=ffc107&color=fff&size=150" alt="Member">
+                        </div>
+                        <h3>Nguyễn Hoàng Đức Duy</h3>
+                        <p class="role">Csdl/Tester</p>
+                    </div>
+                     </div>
+            </div>
+        </section>
+
+        <section class="contact-section container">
+            <h2>Thông tin liên hệ</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Địa chỉ</h4>
+                            <p>Trường Đại học Hoa Sen (HSU)<br>Thành Thái, Q10</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@bookingtourapi.com<br>hieu.nt07171@sinhvien.hoasen.edu.vn</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Hotline</h4>
+                            <p>0909 123 456</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h3>Gửi tin nhắn cho chúng tôi</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Họ tên của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Nội dung tin nhắn..." required></textarea>
+                    </div>
+                    <button type="submit">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BookingTourAPI. Đã đăng ký Bản quyền.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookingTourAPI</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown">
+                </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tìm kiếm chuyến đi tiếp theo của bạn</h1>
+            <p>Khám phá các ưu đãi tuyệt vời về chuyến bay và tour du lịch</p>
+        </div>
+        
+        <div class="search-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-form="flight-form-home">✈️ Chuyến bay</button>
+                <button class="tab-btn" data-form="tour-form-home">🏞️ Tour</button>
+            </div>
+
+            <div class="search-forms">
+         
+
+                <form id="flight-form-home" class="search-form active">
+                     <div class="form-group">
+                        <label for="flight-origin">Điểm đi</label>
+                        <input type="text" id="flight-origin" placeholder="e.g., Hanoi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-dest">Điểm đến</label>
+                        <input type="text" id="flight-dest" placeholder="e.g., Ho Chi Minh" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-depart">Ngày đi</label>
+                        <input type="date" id="flight-depart" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-return">Ngày về</label>
+                        <input type="date" id="flight-return" placeholder="Khứ hồi (tùy chọn)">
+                    </div>
+                    <div class="form-group small">
+                        <label for="flight-adults">Người lớn</label>
+                        <input type="number" id="flight-adults" min="1" value="1" required>
+                    </div>
+                    <div class="form-group small">
+                        <label for="flight-children">Trẻ em</label>
+                        <input type="number" id="flight-children" min="0" value="0" required>
+                    </div>
+                    <button type="submit" class="search-submit-btn">Tìm kiếm</button>
+                </form>
+
+                <form id="tour-form-home" class="search-form">
+                    <div class="form-group large">
+                        <label for="tour-location">Bạn muốn đi đâu?</label>
+                        <input type="text" id="tour-location" placeholder="Ví dụ: Đà Nẵng, Phú Quốc..." >
+                    </div>
+                    <div class="form-group">
+                        <label for="tour-date">Ngày đi</label>
+                        <input type="date" id="tour-date">
+                    </div>
+
+                    
+                    <div class="form-group custom-dropdown-container">
+                        <label for="tour-area-display">Vùng miền</label>
+                        <div class="custom-dropdown-display" id="tour-area-display" tabindex="0">Chọn vùng miền</div>
+                        <input type="hidden" id="tour-area-value">
+                        <div class="custom-dropdown-menu" id="tour-area-menu">
+                            <div class="custom-dropdown-item" data-value="">Tất cả vùng miền</div>
+                            <div class="custom-dropdown-item" data-value="MienBac">Miền Bắc</div>
+                            <div class="custom-dropdown-item" data-value="MienTrung">Miền Trung</div>
+                            <div class="custom-dropdown-item" data-value="MienNam">Miền Nam</div>
+                            <div class="custom-dropdown-item" data-value="NuocNgoai">Nước ngoài</div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group custom-dropdown-container">
+                        <label for="tour-budget-display">Ngân sách</label>
+                        <div class="custom-dropdown-display" id="tour-budget-display" tabindex="0">Chọn mức giá</div>
+                        <input type="hidden" id="tour-budget-value">
+                        <div class="custom-dropdown-menu" id="tour-budget-menu">
+                            <div class="custom-dropdown-item" data-value="">Tất cả mức giá</div>
+                            <div class="custom-dropdown-item" data-value="0-5000000">Dưới 5 triệu</div>
+                            <div class="custom-dropdown-item" data-value="5000000-10000000">Từ 5 - 10 triệu</div>
+                            <div class="custom-dropdown-item" data-value="10000000-20000000">Từ 10 - 20 triệu</div>
+                            <div class="custom-dropdown-item" data-value="20000000-9999999999">Trên 20 triệu</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-submit-btn">Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <h2>Điểm đến thịnh hành</h2>
+        <p>Những địa điểm tuyệt vời đang chờ bạn khám phá</p>
+
+        <div class="dest-grid" id="top-destinations-grid">
+            <p>Đang tải các điểm đến...</p>
+        </div>
+        </section>
+
+
+    <section class="featured-tours" style="padding: 60px 40px; max-width: 1400px; margin: 0 auto;">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 10px; text-align: center;">Tour Du Lịch Nổi Bật</h2>
+        <p style="font-size: 18px; color: #555; margin-bottom: 30px; text-align: center;">Khám phá những hành trình hấp dẫn với giá tốt nhất</p>
+
+        <div id="featured-tours-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px;">
+            <p style="text-align: center; width: 100%;">Đang tải các tour nổi bật...</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="/html/tours.html" class="nav-btn" style="background-color: #007bff; color: white; padding: 12px 30px; border-radius: 30px;">Xem tất cả Tour</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 BookingTourAPI. Đã đăng ký Bản quyền.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/dataMaps.js"></script> 
+</body>
+</html>

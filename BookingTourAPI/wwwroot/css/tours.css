@@ -1,0 +1,118 @@
+/* --- KIỂU CARD TOUR MỚI (DẠNG LƯỚI) --- */
+#results {
+    margin-top: 0; /* Đã có header */
+    display: grid;
+    /* Tự động lấp đầy, card rộng tối thiểu 280px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.activity-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Đảm bảo bo góc cho ảnh */
+    transition: box-shadow 0.3s;
+}
+
+.activity-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.activity-card img {
+    width: 100%;
+    height: 180px; /* Cố định chiều cao ảnh */
+    object-fit: cover; /* Cắt ảnh vừa vặn */
+    border-bottom: 1px solid #eee;
+}
+
+/* Phần nội dung card */
+.activity-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Làm cho content chiếm hết phần thừa */
+}
+
+.activity-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.4;
+    /* Giới hạn tên tour 2 dòng */
+    height: 50.4px; /* 18px * 1.4 * 2 lines */
+    overflow: hidden;
+}
+
+.activity-content .location {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.activity-content .description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* Đẩy giá xuống dưới */
+    margin-bottom: 15px;
+    /* Giới hạn 3 dòng */
+    height: 63px; /* 14px * 1.5 * 3 lines */
+    overflow: hidden;
+}
+
+/* Phần giá */
+.activity-footer {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #f8f9fa;
+}
+
+.activity-footer .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d9534f;
+    text-align: right;
+}
+
+.activity-footer .price-note {
+    font-size: 13px;
+    color: #777;
+    text-align: right;
+    display: block;
+}
+.activity-footer {
+    display: flex;         /* Cho giá và nút nằm ngang */
+    justify-content: space-between; /* Đẩy giá và nút ra 2 bên */
+    align-items: center;    /* Căn giữa theo chiều dọc */
+    padding: 10px 15px;    /* Giảm padding chút */
+    border-top: 1px solid #f0f0f0;
+    background-color: #f8f9fa;
+}
+.activity-footer > div { /* Phần giá */
+    text-align: right;
+}
+.activity-footer .price {
+    font-size: 18px; /* Giảm cỡ chữ giá */
+}
+.select-button.tour-select-btn { /* Style nút chọn tour */
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+.select-button.tour-select-btn:hover {
+    background-color: #218838;
+}
+.select-button.tour-select-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}

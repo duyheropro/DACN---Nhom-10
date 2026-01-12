@@ -1,0 +1,411 @@
+/* TẠO FILE MỚI: wwwroot/css/tour-details.css */
+
+.tour-details-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tour-booking-box {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.tour-booking-box .price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tour-booking-box .price-label {
+    font-size: 18px;
+    color: #555;
+}
+
+.tour-booking-box .price-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.tour-info-tabs h3 {
+    font-size: 22px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.tour-tab-content {
+    background-color: #fff;
+    line-height: 1.7;
+}
+
+.tour-tab-content h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tour-tab-content p, .tour-tab-content div {
+    font-size: 15px;
+    color: #444;
+}
+
+.itinerary-day {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: #fdfdfd;
+}
+
+.itinerary-day h4 {
+    font-size: 18px;
+    color: #1a5c9a;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+/* TRONG FILE: tour-details.css (thêm vào cuối file) */
+
+.tour-image-gallery {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tour-gallery-main-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.tour-gallery-thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tour-gallery-thumbnails img {
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.tour-gallery-thumbnails img:hover {
+    border-color: #007bff;
+}
+
+/* --- CSS MỚI CHO PHẦN BOOKING --- */
+.tour-booking-container {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.tour-calendar-section h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Tabs tháng */
+.month-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+.month-btn {
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    white-space: nowrap;
+}
+.month-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Danh sách ngày khởi hành (Grid) */
+.departure-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.departure-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.departure-item:hover {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}
+.departure-item.selected {
+    border-color: #d9534f;
+    background-color: #fff5f5;
+    box-shadow: 0 0 0 1px #d9534f;
+}
+.dep-date {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+.dep-price {
+    display: block;
+    font-size: 13px;
+    color: #d9534f;
+    margin-top: 4px;
+}
+
+/* Thông tin chi tiết */
+.selected-departure-info {
+    background-color: #fcfcfc;
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+}
+.highlight-text {
+    color: #d9534f;
+}
+
+/* Box thông tin bay */
+.flight-info-box {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.flight-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.flight-label { width: 80px; color: #666; }
+.flight-code { color: #007bff; font-weight: 500; }
+
+/* Bảng giá */
+.price-table {
+    margin-bottom: 20px;
+}
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+}
+.price-value {
+    color: #d9534f;
+    font-size: 16px;
+}
+
+/* Nút hành động */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+.btn-book-red {
+    flex: 2;
+    background-color: #d9534f; /* Màu đỏ giống Vietravel */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-book-red:hover { background-color: #c9302c; }
+
+.btn-contact {
+    flex: 1;
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* ==== REVIEW STYLES ==== */
+.review-section {
+    margin-top: 32px;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.review-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 8px;
+}
+
+.review-section-header h3 {
+    margin: 0;
+}
+
+.review-summary-line {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.review-score {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff9800;
+}
+
+.review-score-max {
+    font-size: 16px;
+    color: #666;
+}
+
+.review-count {
+    font-size: 14px;
+    color: #666;
+    margin-left: 6px;
+}
+
+.review-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 24px;
+    margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .review-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.review-list {
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.review-card {
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.review-user {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.review-rating {
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.review-rating-text {
+    font-size: 12px;
+    color: #555;
+    margin-left: 4px;
+}
+
+.review-stars {
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.review-comment {
+    font-size: 14px;
+    margin-top: 4px;
+    white-space: normal;
+}
+
+.review-time {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.review-form-card {
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    padding: 14px 16px;
+    background: #f8f9ff;
+}
+
+.review-form-card h4 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.review-form-note {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.review-label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.review-input {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.review-submit-btn {
+    margin-top: 10px;
+    width: 100%;
+}

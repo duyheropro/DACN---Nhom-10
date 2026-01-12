@@ -1,0 +1,139 @@
+/* TRONG FILE: wwwroot/css/auth.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* background-color: #f0f2f5; <-- Dòng này sẽ bị ghi đè bởi ảnh nền */
+    margin: 0;
+    color: #1c1e21; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* --- THÊM CÁC THUỘC TÍNH NÀY CHO ẢNH NỀN --- */
+    background-image: url('../images/auth-background.jpg'); /* Đổi tên file nếu bạn dùng tên khác */
+    background-size: cover; /* Đảm bảo ảnh bao phủ toàn bộ */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp ảnh */
+    background-attachment: fixed; /* Ảnh cố định khi cuộn */
+    /* Tạo lớp phủ tối nhẹ để form dễ đọc hơn */
+    background-color: rgba(0, 0, 0, 0.4); /* Màu đen với độ trong suốt 40% */
+    background-blend-mode: overlay; /* Hòa trộn màu nền với ảnh */
+    /* ------------------------------------------- */
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px; /* Độ rộng form */
+}
+
+.auth-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px; /* Tăng padding */
+    box-sizing: border-box;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo-link {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff; /* Màu logo */
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.auth-header h1 {
+    font-size: 26px;
+    margin: 0 0 8px 0;
+    color: #1c1e21;
+}
+
+.auth-header p {
+    font-size: 16px;
+    color: #606770; /* Màu chữ phụ */
+    margin: 0;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b4f56;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 14px 16px; /* Padding lớn hơn */
+    border: 1px solid #dddfe2; /* Viền nhạt hơn */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff; /* Màu xanh dương chủ đạo */
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px; /* Thêm khoảng cách trên nút */
+}
+
+.auth-button:hover {
+    background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
+}
+
+.error-message {
+    color: #fa3e3e; /* Màu đỏ lỗi */
+    background-color: #ffebe6; /* Nền đỏ nhạt */
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: none; /* Ẩn ban đầu */
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ffbdad;
+}
+
+.auth-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #606770;
+}
+
+.auth-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

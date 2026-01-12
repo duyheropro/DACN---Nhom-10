@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đánh giá - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- HEADER GIỐNG DASHBOARD -->
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/dashboard.html">BookingTourAPI</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#" id="logout-button">Đăng xuất</a>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- SIDEBAR GIỐNG DASHBOARD -->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html#section-dashboard">
+                            <i class="bi bi-house-door-fill me-2"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html#section-orders">
+                            <i class="bi bi-card-list me-2"></i> Quản lý Đơn hàng
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html#section-users">
+                            <i class="bi bi-people-fill me-2"></i> Quản lý Người dùng
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html#section-cms">
+                            <i class="bi bi-pencil-square me-2"></i> Quản lý Trang chủ
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard.html#section-tours-cms">
+                            <i class="bi bi-map-fill me-2"></i> Quản lý Gói Tour
+                        </a>
+                    </li>
+
+                    <!-- ⭐ ĐANG Ở TRANG NÀY -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/reviews.html">
+                            <i class="bi bi-star-fill me-2"></i> Quản lý Đánh giá
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h2 class="mb-0">Quản lý đánh giá &amp; nhận xét</h2>
+                    <small class="text-muted">Dùng để xem / xoá các đánh giá của khách cho từng Tour.</small>
+                </div>
+                <!-- Nút quay lại Gói Tour nếu cần -->
+                <a href="/dashboard.html#section-tours-cms" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left-circle me-1"></i> Về trang chủ
+                </a>
+            </div>
+
+            <!-- CARD FILTER + STATS -->
+            <div class="card shadow-sm mb-3">
+                <div class="card-body">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-md-4">
+                            <label for="review-tour-id" class="form-label mb-1">Tour ID (tuỳ chọn)</label>
+                            <input type="number" class="form-control" id="review-tour-id" placeholder="VD: 1">
+                        </div>
+                        <div class="col-md-3">
+                            <button id="btn-load-reviews" class="btn btn-primary w-100">
+                                <i class="bi bi-arrow-repeat me-1"></i> Tải đánh giá
+                            </button>
+                        </div>
+                        <div class="col-md-5 text-md-end">
+                            <div>
+                                <span class="badge bg-primary me-2">
+                                    <i class="bi bi-chat-left-text me-1"></i>
+                                    Tổng: <span id="badge-total-reviews">0</span> đánh giá
+                                </span>
+                                <span class="badge bg-warning text-dark">
+                                    <i class="bi bi-star-fill me-1"></i>
+                                    Điểm TB: <span id="badge-average-rating">0.0</span> / 5
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="reviews-alert" class="alert alert-info mt-3 mb-0" style="display:none;"></div>
+                </div>
+            </div>
+
+            <!-- BẢNG ĐÁNH GIÁ -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <strong>Danh sách đánh giá</strong>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width:60px;">ID</th>
+                                <th style="width:220px;">Tour</th>
+                                <th>Email</th>
+                                <th style="width:80px;">Điểm</th>
+                                <th style="width:260px;">Nội dung</th>
+                                <th style="width:160px;">Thời gian</th>
+                                <th style="width:80px;" class="text-center">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reviews-tbody">
+                            <!-- JS sẽ render -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+
+<!-- Nếu bạn dùng logic logout chung trong dashboard.js thì import luôn -->
+<script src="js/dashboard.js"></script>
+
+<!-- JS quản lý đánh giá -->
+<script src="js/reviews-admin.js"></script>
+
+</body>
+</html>

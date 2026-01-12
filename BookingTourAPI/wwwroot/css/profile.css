@@ -1,0 +1,130 @@
+/* TRONG FILE: wwwroot/css/profile.css */
+
+body {
+    background-color: #f4f7f9;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 40px auto; /* Tăng khoảng cách trên dưới */
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-container h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+#profile-form .form-group {
+    margin-bottom: 25px; /* Tăng khoảng cách */
+}
+
+#profile-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #4b4f56;
+}
+
+#profile-form input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Làm mờ ô email không cho sửa */
+#profile-form input:read-only,
+#profile-form input:disabled {
+    background-color: #f5f6f7;
+    color: #777;
+    cursor: not-allowed;
+}
+
+#profile-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.save-button {
+    display: inline-block; /* Nút không chiếm hết chiều rộng */
+    padding: 12px 25px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+.profile-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.profile-actions a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+ .profile-actions a:hover {
+     text-decoration: underline;
+ }
+
+/* Kiểu cho thông báo */
+.error-box, .success-box, .loading-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.error-box {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #ffbdad;
+}
+
+.success-box {
+    color: #155724;
+    background-color: #D4EDDA;
+    border: 1px solid #c3e6cb;
+}
+
+.loading-message {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+/* Visibility states */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}

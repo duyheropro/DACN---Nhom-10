@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Search</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/search-layout.css"> <link rel="stylesheet" href="../css/tours.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown"></div>
+        </div>
+    </header>
+
+    <div class="search-page-container">
+        
+        <aside class="search-sidebar">
+            <h2>Tìm kiếm Tour</h2>
+            <form id="tour-search-form">
+                <div class="form-group">
+                    <label for="tour-location-sidebar">Bạn muốn đi đâu?</label>
+                    <input type="text" id="tour-location-sidebar" placeholder="Tên tour, địa điểm...">
+                </div>
+                <div class="form-group">
+                    <label for="tour-date-sidebar">Ngày đi</label>
+                    <input type="date" id="tour-date-sidebar">
+                </div>
+                
+                
+                <div class="form-group custom-dropdown-container">
+                    <label for="tour-area-display-sidebar">Vùng miền</label>
+                    <div class="custom-dropdown-display" id="tour-area-display-sidebar" tabindex="0">Chọn vùng miền</div>
+                    <input type="hidden" id="tour-area-value-sidebar">
+                    <div class="custom-dropdown-menu" id="tour-area-menu-sidebar">
+                        <div class="custom-dropdown-item" data-value="">Tất cả vùng miền</div>
+                        <div class="custom-dropdown-item" data-value="MienBac">Miền Bắc</div>
+                        <div class="custom-dropdown-item" data-value="MienTrung">Miền Trung</div>
+                        <div class="custom-dropdown-item" data-value="MienNam">Miền Nam</div>
+                        <div class="custom-dropdown-item" data-value="NuocNgoai">Nước ngoài</div>
+                    </div>
+                </div>
+
+                <div class="form-group custom-dropdown-container">
+                    <label for="tour-budget-display-sidebar">Ngân sách</label>
+                    <div class="custom-dropdown-display" id="tour-budget-display-sidebar" tabindex="0">Chọn mức giá</div>
+                    <input type="hidden" id="tour-budget-value-sidebar">
+                    <div class="custom-dropdown-menu" id="tour-budget-menu-sidebar">
+                        <div class="custom-dropdown-item" data-value="">Tất cả mức giá</div>
+                        <div class="custom-dropdown-item" data-value="0-5000000">Dưới 5 triệu</div>
+                        <div class="custom-dropdown-item" data-value="5000000-10000000">Từ 5 - 10 triệu</div>
+                        <div class="custom-dropdown-item" data-value="10000000-20000000">Từ 10 - 20 triệu</div>
+                        <div class="custom-dropdown-item" data-value="20000000-9999999999">Trên 20 triệu</div>
+                    </div>
+                </div>
+                <button type="submit">Tìm kiếm</button>
+            </form>
+        </aside>
+        <main class="results-container">
+            <div class="results-header">
+                <h1>Kết quả tìm kiếm Tour</h1>
+                <div class="sort-options">
+                    <button class="sort-btn" id="sort-tours-desc">Giá cao nhất</button>
+                    <button class="sort-btn active" id="sort-tours-asc">Giá thấp nhất</button>
+                </div>
+            </div>
+            
+            <div id="error" class="error"></div>
+            <div id="results"></div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script> 
+    <script src="../js/dataMaps.js"></script>
+    <script src="../js/tours.js"></script>
+</body>
+</html>

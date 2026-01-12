@@ -1,0 +1,198 @@
+/* --- Bố cục Sidebar + Content --- */
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: #fff;
+}
+
+/* Thanh Navbar */
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+}
+
+/* Nội dung chính */
+main {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+@media (max-width: 767.98px) {
+    main { margin-left: 0; }
+    .sidebar { width: 100%; height: auto; position: relative; padding-top: 0; }
+}
+
+/* --- TRẠNG THÁI (Status Badges) --- */
+.status-active { color: #198754; font-weight: bold; }
+.status-locked { color: #dc3545; font-weight: bold; }
+.status-pending_confirmation { color: #ffc107; font-weight: bold; }
+.status-confirmed { color: #198754; font-weight: bold; }
+
+/* Trạng thái thanh toán */
+.status-deposit {
+    color: #fd7e14;
+    font-weight: bold;
+    background-color: #fff3cd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ffeeba;
+}
+
+.status-full {
+    color: #198754;
+    font-weight: bold;
+    background-color: #d1e7dd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #badbcc;
+}
+
+.action-btn { margin-right: 5px; margin-bottom: 5px; }
+.td-wrap { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ==========================================================================
+   CHAT ADMIN STYLES (ĐÃ FIX LỖI MẤT GIAO DIỆN)
+   ========================================================================== */
+
+/* 1. Khung bao ngoài: Cố định chiều cao, không cho tràn */
+.chat-wrapper {
+    display: flex;
+    flex-direction: row;          /* Xếp ngang */
+    width: 100%;
+    height: 75vh;                 /* Chiều cao cố định (75% màn hình) */
+    min-height: 500px;
+    background-color: #fff;
+    border: 1px solid #d1d3e2;
+    border-radius: 8px;
+    overflow: hidden;             /* Ẩn phần thừa */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* 2. Cột trái: Danh sách User */
+.chat-sidebar {
+    width: 300px;
+    min-width: 300px;             /* Không co lại */
+    border-right: 1px solid #d1d3e2;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fc;
+    height: 100%;                 /* Full chiều cao cha */
+}
+
+.chat-sidebar-header {
+    padding: 15px;
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;               /* Header cố định */
+}
+
+.chat-user-list {
+    flex: 1;                      /* Chiếm phần còn lại */
+    overflow-y: auto;             /* Cuộn dọc */
+    padding: 0;
+    height: 0;                    /* QUAN TRỌNG: Để flex scroll hoạt động */
+}
+
+/* Item User */
+.chat-user-item {
+    padding: 15px;
+    border-bottom: 1px solid #eaecf4;
+    cursor: pointer;
+    background: white;
+    transition: background 0.2s;
+}
+.chat-user-item:hover { background-color: #eaecf4; }
+.chat-user-item.active { background-color: #d1e3ff; border-left: 4px solid #0d6efd; }
+.chat-user-item.unread { font-weight: bold; background-color: #fff3cd; }
+
+/* 3. Cột phải: Khung Chat Chính */
+.chat-main {
+    flex: 1;                      /* Chiếm hết chiều rộng còn lại */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: relative;
+    min-width: 0;                 /* Fix lỗi flexbox text dài bị tràn */
+    height: 100%;
+}
+
+.chat-main-header {
+    padding: 15px;
+    border-bottom: 1px solid #eaecf4;
+    font-weight: bold;
+    color: #0d6efd;
+    background-color: #f8f9fc;
+    flex-shrink: 0;               /* Header cố định */
+}
+
+.chat-main-messages {
+    flex: 1;                      /* Giãn nở */
+    padding: 20px;
+    overflow-y: auto;             /* Cuộn dọc */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 0;                    /* QUAN TRỌNG: Để scroll hoạt động */
+}
+
+/* Form nhập liệu (Luôn nằm đáy) */
+.chat-main-input {
+    padding: 15px;
+    border-top: 1px solid #eaecf4;
+    background-color: #f8f9fc;
+    display: flex;                /* Mặc định là flex (JS sẽ toggle show/hide) */
+    gap: 10px;
+    flex-shrink: 0;               /* Cố định, không bị đẩy mất */
+}
+
+.chat-main-input input {
+    flex: 1;
+    border-radius: 20px;
+}
+
+/* Bong bóng chat */
+.msg-bubble {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+.msg-bubble.received {
+    align-self: flex-start;
+    background-color: #e4e6eb;
+    color: #000;
+    border-bottom-left-radius: 2px;
+}
+.msg-bubble.sent {
+    align-self: flex-end;
+    background-color: #0d6efd;
+    color: white;
+    border-bottom-right-radius: 2px;
+}

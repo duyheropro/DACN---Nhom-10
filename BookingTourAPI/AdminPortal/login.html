@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - BookingTourAPI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+        }
+    </style>
+</head>
+<body class="text-center">
+
+    <main class="login-card m-auto p-4 card shadow">
+        <form id="login-form">
+            <h1 class="h3 mb-3 fw-normal">Admin Dashboard</h1>
+            <p class="mb-3 text-muted">Vui lòng đăng nhập để tiếp tục</p>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="admin@email.com" required>
+                <label for="email">Địa chỉ email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password">Mật khẩu</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Đăng nhập</button>
+            
+            <div id="error-message" class="alert alert-danger mt-3" style="display:none;"></div>
+        </form>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

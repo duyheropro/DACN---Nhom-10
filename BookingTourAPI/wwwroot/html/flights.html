@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/search-layout.css"> <link rel="stylesheet" href="../css/flights.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown"></div>
+        </div>
+    </header>
+
+    <div class="search-page-container">
+        
+        <aside class="search-sidebar">
+            <h2>Tìm kiếm chuyến bay</h2>
+            <form id="flight-search-form">
+                <div class="form-group">
+                    <label for="origin">Điểm đi (IATA)</label>
+                    <input type="text" id="origin" name="origin" required placeholder="e.g., Ho Chi Minh City">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Điểm đến (IATA)</label>
+                    <input type="text" id="destination" name="destination" required placeholder="e.g., Hanoi">
+                </div>
+                <div class="form-group">
+                    <label for="departureDate">Ngày đi</label>
+                    <input type="date" id="departureDate" name="departureDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="returnDate">Ngày về (Khứ hồi)</label>
+                    <input type="date" id="returnDate" name="returnDate">
+                </div>
+                <div class="form-group">
+                    <label for="adults">Người lớn</label>
+                    <input type="number" id="adults" name="adults" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="children">Trẻ em</label>
+                    <input type="number" id="children" name="children" min="0" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="travelClass">Hạng vé</label>
+                    <select id="travelClass" name="travelClass" required>
+                        <option value="ECONOMY">Economy</option>
+                        <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                        <option value="BUSINESS">Business</option>
+                        <option value="FIRST">First</option>
+                    </select>
+                </div>
+                <button type="submit">Search Flights</button>
+            </form>
+        </aside>
+        
+        <main class="results-container">
+            <div class="results-header">
+                <h1>Kết quả tìm kiếm Chuyến bay</h1>
+                <div class="sort-options">
+                    <button class="sort-btn" id="sort-flights-desc">Giá cao nhất</button>
+                    <button class="sort-btn active" id="sort-flights-asc">Giá thấp nhất</button>
+                </div>
+            </div>
+            
+            <div id="error" class="error"></div>
+            <div id="results"></div>
+        </main>
+    </div>
+
+    <div id="details-modal" class="modal">
+        </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/dataMaps.js"></script>
+    <script src="../js/flights.js"></script>
+</body>
+</html>

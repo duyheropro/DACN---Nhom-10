@@ -1,0 +1,164 @@
+/* --- KIỂU CARD CHUYẾN BAY MỚI --- */
+#results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flight-offer {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: stretch; /* Làm các cột cao bằng nhau */
+    transition: box-shadow 0.3s;
+}
+
+.flight-offer:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Phần thông tin chặng bay (trái) */
+.flight-details {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các chặng (đi, về) */
+}
+
+.itinerary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.airline-logo {
+    width: 40px;
+    height: 40px;
+    background-color: #eee;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.flight-times {
+    flex-grow: 1;
+}
+
+.flight-times .time-iata {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.flight-times .date-airport {
+    font-size: 13px;
+    color: #666;
+}
+
+.flight-duration {
+    width: 130px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.flight-duration .duration {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.flight-duration .stops {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Đường gạch ngang + máy bay */
+.flight-duration::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-bottom: 5px;
+    position: relative;
+}
+/* (Bạn có thể thêm icon máy bay ở đây) */
+
+
+/* Phần giá và nút (phải) */
+.flight-pricing {
+    width: 200px;
+    flex-shrink: 0;
+    padding: 20px;
+    border-left: 1px solid #f0f0f0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.flight-pricing .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.flight-pricing .price-note {
+    font-size: 12px;
+    color: #777;
+}
+
+.flight-pricing .select-button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.flight-pricing .select-button:hover {
+    background-color: #218838;
+}
+
+
+/* --- MODAL (Giữ nguyên) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+}

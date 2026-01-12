@@ -1,0 +1,157 @@
+/* --- CẤU TRÚC LAYOUT 2 CỘT --- */
+body {
+    background-color: #f4f7f9; /* Màu nền xám nhạt */
+}
+
+.search-page-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Sidebar 300px, còn lại là kết quả */
+    gap: 24px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- SIDEBAR TÌM KIẾM (BÊN TRÁI) --- */
+.search-sidebar {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 20px;
+    /* Làm cho nó "dính" lại khi cuộn */
+    position: sticky;
+    top: 20px;
+    align-self: start; /* Chỉ dính ở đầu */
+}
+
+.search-sidebar h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Căn chỉnh lại form trong sidebar */
+.search-sidebar form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-sidebar .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.search-sidebar label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.search-sidebar input,
+.search-sidebar select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
+
+.search-sidebar button {
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-sidebar button:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- KHUNG KẾT QUẢ (BÊN PHẢI) --- */
+.results-container {
+    min-width: 0; /* Fix lỗi flexbox/grid co giãn */
+}
+
+.results-header {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* CSS cho spinner/loading (thêm nếu muốn) */
+#results.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #555;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    background-color: #ffebee;
+    border: 1px solid red;
+    padding: 15px;
+    border-radius: 8px;
+}
+/* TRONG FILE: wwwroot/css/search-layout.css */
+/* THAY THẾ PHẦN CSS CHO NÚT LỌC BẰNG ĐOẠN NÀY */
+
+.sort-options {
+    display: flex;
+    border: 1px solid #dee2e6; /* Viền bao quanh nhóm */
+    border-radius: 6px; /* Bo góc cho nhóm */
+    overflow: hidden; /* Đảm bảo bo góc áp dụng cho nút */
+}
+
+.sort-btn {
+    padding: 8px 18px; /* Tăng padding ngang */
+    font-size: 14px;
+    background-color: #fff; /* Nền trắng */
+    border: none; /* Bỏ viền riêng của nút */
+    color: #495057;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    /* Thêm viền ngăn cách giữa các nút */
+    border-left: 1px solid #dee2e6;
+}
+
+/* Bỏ viền trái cho nút đầu tiên */
+.sort-options .sort-btn:first-child {
+    border-left: none;
+}
+
+.sort-btn:hover {
+    background-color: #f8f9fa; /* Nền xám nhạt khi hover */
+    color: #007bff;
+}
+
+.sort-btn.active {
+    background-color: #007bff; /* Nền xanh khi active */
+    color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Hiệu ứng nhấn xuống */
+}
+
+/* Đảm bảo nút không bị ngắt dòng chữ */
+.sort-btn {
+    white-space: nowrap;
+}

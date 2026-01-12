@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Tour - BookingTourAPI</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/tour-details.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/html/home.html" class="logo-link">BookingTourAPI</a></div>
+        <nav>
+            <a href="/html/flights.html" class="nav-btn">Flight</a>
+            <a href="/html/tours.html" class="nav-btn">Tour</a>
+            <a href="/html/about.html" class="nav-btn">Về chúng tôi</a>
+        </nav>
+        <div class="user-menu">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="dropdown-content" id="userDropdown"></div>
+        </div>
+    </header>
+
+    <main class="profile-container" style="max-width: 900px;">
+        
+        <div id="tour-details-content">
+            <div id="loading-message" class="loading-message">Đang tải chi tiết tour...</div>
+            <div id="error-message" class="error-box" style="display: none;"></div>
+
+            <h1 id="tour-title" style="text-align: left;"></h1>
+            
+            <div id="tour-image-gallery" class="tour-image-gallery"></div>
+
+            <div class="tour-booking-container">
+    
+                <div class="tour-calendar-section">
+                    <h3>Lịch khởi hành & Giá</h3>
+                    <div class="month-tabs" id="month-tabs"></div>
+                    
+                    <div class="departure-list" id="departure-list">
+                        <p class="loading-text">Đang tải lịch khởi hành...</p>
+                    </div>
+                </div>
+
+                <div id="selected-departure-info" class="selected-departure-info" style="display:none;">
+                    <h4>Thông tin chuyến đi <span id="selected-date-display" class="highlight-text"></span></h4>
+                    
+                    <div class="flight-info-box">
+                        <div class="flight-row">
+                            <span class="flight-label">Ngày đi:</span>
+                            <strong id="flight-start-date"></strong>
+                            <span class="flight-code" id="flight-code-out"></span>
+                            <span class="flight-time" id="flight-time-out"></span>
+                        </div>
+                        <div class="flight-row">
+                            <span class="flight-label">Ngày về:</span>
+                            <strong id="flight-end-date"></strong>
+                            <span class="flight-code" id="flight-code-in"></span>
+                            <span class="flight-time" id="flight-time-in"></span>
+                        </div>
+                    </div>
+
+                    <div class="price-table">
+                        <div class="price-row align-items-center">
+                            <span>Người lớn (>12 tuổi)</span>
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <strong class="price-value" id="price-adult">0 đ</strong>
+                                <input type="number" id="qty-adult" value="1" min="1" max="10" class="qty-input" onchange="calculateTotal()">
+                            </div>
+                        </div>
+                        <div class="price-row align-items-center">
+                            <span>Trẻ em (2-11 tuổi)</span>
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <strong class="price-value" id="price-child">0 đ</strong>
+                                <input type="number" id="qty-child" value="0" min="0" max="10" class="qty-input" onchange="calculateTotal()">
+                            </div>
+                        </div>
+                        <div class="price-row align-items-center">
+                            <span>Em bé (&lt;2 tuổi)</span>
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <strong class="price-value" id="price-infant">0 đ</strong>
+                                <input type="number" id="qty-infant" value="0" min="0" max="10" class="qty-input" onchange="calculateTotal()">
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="price-row total">
+                            <span>Số chỗ còn nhận:</span>
+                            <span id="seats-available" style="color: green; font-weight:bold;"></span>
+                        </div>
+                        <div class="price-row total">
+                            <span>TỔNG CỘNG:</span>
+                            <span id="total-booking-price" style="color: #d9534f; font-size: 20px; font-weight:bold;">0 VND</span>
+                        </div>
+                    </div>
+
+                    <style>
+                        .qty-input { width: 60px; padding: 5px; border: 1px solid #ddd; border-radius: 4px; text-align: center; }
+                        .align-items-center { display: flex; justify-content: space-between; align-items: center; }
+                        .status-locked { color: red; font-weight: bold; }
+                        .departure-item.locked { background-color: #eee; color: #aaa; cursor: not-allowed; border-color: #ddd; }
+                    </style>
+
+                    <div class="action-buttons">
+                        <button id="book-now-button" class="btn-book-red">Đặt ngay</button>
+                        <button class="btn-contact">Liên hệ tư vấn</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-info-tabs">
+    <h3>Lịch trình chi tiết</h3>
+    <div id="itinerary-container" class="tour-tab-content"></div>
+
+    <h3>Điểm nổi bật</h3>
+    <div id="highlights-container" class="tour-tab-content"></div>
+    
+    <h3>Chính sách</h3>
+    <div class="tour-tab-content">
+        <h5>Dịch vụ bao gồm</h5>
+        <div id="policy-includes-container"></div>
+        
+        <h5 style="margin-top: 20px;">Dịch vụ không bao gồm</h5>
+        <div id="policy-excludes-container"></div>
+    </div>
+
+    <!-- ========== ĐÁNH GIÁ & NHẬN XÉT ========== -->
+    <section class="review-section">
+        <div class="review-section-header">
+            <h3>Đánh giá & nhận xét</h3>
+            <div id="reviews-summary" class="review-summary"></div>
+        </div>
+
+        <div class="review-layout">
+            <!-- Cột trái: danh sách review -->
+            <div class="review-list" id="reviews-container">
+                <!-- các review sẽ render bằng JS -->
+            </div>
+
+            <!-- Cột phải: form gửi review -->
+            <div class="review-form-card" id="review-form">
+                <h4>Viết đánh giá của bạn</h4>
+                <p class="review-form-note">
+                    Hãy chia sẻ cảm nhận để khách khác tham khảo. Bạn có thể đánh giá nhiều lần nếu muốn bổ sung ý kiến.
+                </p>
+
+                <label for="review-rating" class="review-label">Điểm:</label>
+                <select id="review-rating" class="review-input">
+                    <option value="5">5 sao - Tuyệt vời</option>
+                    <option value="4">4 sao - Rất tốt</option>
+                    <option value="3">3 sao - Bình thường</option>
+                    <option value="2">2 sao - Chưa hài lòng</option>
+                    <option value="1">1 sao - Rất tệ</option>
+                </select>
+
+                <label for="review-comment" class="review-label" style="margin-top:8px;">Nhận xét:</label>
+                <textarea id="review-comment"
+                          rows="4"
+                          class="review-input"
+                          placeholder="Nhập nhận xét của bạn về chất lượng tour, hướng dẫn viên, dịch vụ..."></textarea>
+
+                <button type="button"
+                        onclick="submitReview(window.tourId)"
+                        class="btn btn-primary review-submit-btn">
+                    Gửi đánh giá
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- ========== HẾT PHẦN ĐÁNH GIÁ ========== -->
+
+</div>
+
+
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>© 2025 BookingTourAPI. Đã đăng ký Bản quyền.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+
+    <!-- JS review (PHẢI CÓ) -->
+    <script src="../js/review.js"></script>
+    <script>
+        // Lấy tourId từ query ?id=...
+        const params = new URLSearchParams(window.location.search);
+        const tourId = params.get('id');
+        window.tourId = tourId; // dùng trong submitReview
+
+        if (tourId) {
+            // gọi API lấy danh sách review
+            loadReviews(tourId);
+        }
+    </script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/tour-details.js"></script>
+</body>
+</html>

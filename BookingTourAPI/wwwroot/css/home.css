@@ -1,0 +1,496 @@
+body, html {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+/* --- HEADER (Giữ nguyên từ file gốc) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; /* Tăng padding */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky; /* Giữ header */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: #007bff; /* Màu thương hiệu */
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #f0f7ff;
+    color: #007bff;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    /* (Thêm hình ảnh/icon thật vào đây) */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px; /* Thêm khoảng cách */
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15); /* Shadow đẹp hơn */
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+/* ---- HERO SECTION (NÂNG CẤP) ---- */
+.hero {
+    background: linear-gradient(rgba(0, 50, 100, 0.4), rgba(0, 20, 50, 0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 40px 60px 40px; /* Tăng padding */
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* Thêm margin bottom */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ---- KHUNG TÌM KIẾM (NÂNG CẤP) ---- */
+.search-container {
+    max-width: 1200px; /* Rộng hơn */
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ---- TABS (NÂNG CẤP) ---- */
+.tabs {
+    display: flex;
+    justify-content: flex-start; /* Canh trái */
+    gap: 0px; /* Bỏ gap */
+    padding: 10px 10px 0 10px; /* Padding xung quanh tab */
+    background-color: #f9f9f9; /* Nền cho khu vực tab */
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+}
+
+.tab-btn {
+    padding: 14px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    color: #555;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 3px solid transparent; /* Đường gạch chân mờ */
+    margin-bottom: -1px; /* Nối liền với border-bottom của .tabs */
+}
+
+.tab-btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.tab-btn.active {
+    background-color: #fff; /* Nền trắng */
+    color: #007bff; /* Màu thương hiệu */
+    border-bottom: 3px solid #007bff; /* Gạch chân xanh */
+}
+
+/* ---- SEARCH FORMS (NÂNG CẤP) ---- */
+.search-forms {
+    background: #fff;
+    padding: 25px;
+    border-radius: 0 0 8px 8px;
+}
+
+.search-form {
+    display: none; /* Ẩn tất cả form ban đầu */
+    flex-wrap: nowrap; /* Không cho xuống dòng */
+    gap: 15px;
+    align-items: flex-end; /* Căn các item xuống dưới */
+}
+
+.search-form.active {
+    display: flex; /* Chỉ hiện form active */
+}
+
+.search-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1; /* Cho các group tự co giãn */
+}
+
+/* Tùy chỉnh kích thước */
+.search-form .form-group.large {
+    flex-grow: 2;
+}
+.search-form .form-group.small {
+    flex-grow: 0.5;
+    min-width: 80px;
+}
+
+.search-form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333; 
+}
+
+.search-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Quan trọng */
+    font-size: 16px;
+    height: 47px; /* Cố định chiều cao input */
+}
+
+.search-form button.search-submit-btn {
+    padding: 12px 25px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 47px; /* Căn bằng với input */
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Không co lại */
+}
+
+.search-form button.search-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.destinations {
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.destinations h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.destinations p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.dest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tự động chia cột */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.dest-card {
+    position: relative;
+    border-radius: 12px; /* Bo góc nhiều hơn */
+    overflow: hidden;
+    height: 380px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dest-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.dest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.dest-card:hover img {
+    transform: scale(1.05); /* Zoom ảnh khi hover */
+}
+
+.dest-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px 20px 20px;
+    /* Lớp mờ gradient tinh tế */
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(0,0,0,0.2) 30%, 
+        rgba(0,0,0,0.7) 100%);
+}
+
+.dest-name {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ---- FOOTER (NÂNG CẤP) ---- */
+footer {
+    text-align: center;
+    padding: 30px 40px;
+    background-color: #333;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+
+/* --- === BẮT ĐẦU CSS CHO CUSTOM DROPDOWN (NGÂN SÁCH) === --- */
+
+.custom-dropdown-container {
+    position: relative; /* Anchor for the menu */
+}
+
+.custom-dropdown-display {
+    /* Style to look like an input */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-user-select: none; /* Prevent text selection on Safari */
+    user-select: none; /* Prevent text selection */
+    
+    /* Match placeholder color */
+    color: #757575; 
+    
+    /* Căn chỉnh text giống input */
+    display: flex;
+    align-items: center;
+    height: 47px; /* Match button/input height */
+}
+
+.custom-dropdown-display.active,
+.custom-dropdown-display:focus {
+    /* Highlight when active */
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.custom-dropdown-display.selected {
+     color: #333; /* Change text color when an option is selected */
+}
+
+.custom-dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position right below the display box */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 1001; /* Above other content */
+    margin-top: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+.custom-dropdown-menu.show {
+    display: block; /* Show the menu */
+}
+
+.custom-dropdown-item {
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.custom-dropdown-item:first-child {
+    /* Style for the "Clear" option */
+    color: #777;
+    font-style: italic;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- === KẾT THÚC CSS CHO CUSTOM DROPDOWN === --- */
+
+/* --- CHAT BOX STYLES (Thêm vào cuối file home.css) --- */
+
+.chat-box {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    z-index: 99999; /* Z-index cao để nổi lên trên cùng */
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    animation: slideUp 0.3s ease-out;
+    font-family: sans-serif; /* Đảm bảo font chữ đẹp */
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #0056b3;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Bong bóng tin nhắn */
+.message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #007bff;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.message.admin {
+    align-self: flex-start;
+    background: #e9ecef;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-input-area {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    background: white;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input-area button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.chat-input-area button:hover {
+    color: #0056b3;
+}
