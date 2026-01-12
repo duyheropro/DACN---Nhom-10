@@ -37,7 +37,7 @@ GO
 -- 3. KIỂM TRA KẾT QUẢ (Nếu ra số > 0 là thành công)
 SELECT COUNT(*) AS SoLuongLichTrinh FROM TourDepartures;
 SELECT TOP 10 * FROM TourDepartures;
-
+cccccccccc
 
 -- chạy test
 select * from TourPackages
