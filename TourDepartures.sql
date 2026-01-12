@@ -1,7 +1,7 @@
-﻿create database BookingTour
+create database BookingTour
 USE BookingTour;
 GO
-jgfjhsgjfh
+
 -- 1. Xóa sạch dữ liệu lịch cũ để làm lại
 DELETE FROM TourDepartures;
 DBCC CHECKIDENT ('TourDepartures', RESEED, 0);
@@ -49,3 +49,13 @@ DELETE FROM FlightOrders;
 DELETE FROM TourBookings;
 UPDATE TourDepartures
 SET AvailableSeats = 20;
+
+
+Nguyễn Văn A
+Nguyễn Thị B
+Trần Văn C
+Lê Thị D
+Phạm Văn E
+
+
+            
