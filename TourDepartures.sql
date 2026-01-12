@@ -14,7 +14,7 @@ INSERT INTO TourDepartures (
     AvailableSeats, Airline, 
     FlightNumberOut, FlightNumberIn, 
     FlightTimeOut, FlightTimeIn
-)
+)sdsdsds
 SELECT 
     tp.Id,
     DATEADD(day, T.OffsetDays, GETDATE()),       
